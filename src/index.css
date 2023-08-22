@@ -1,0 +1,8 @@
+@import-normalize;
+
+@font-face {
+  font-family: 'Quantico';
+  src:
+    local('Quantico'),
+    url(./assets/fonts/Quantico-Regular.ttf) format('truetype');
+}
