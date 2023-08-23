@@ -21,7 +21,7 @@ const Footer = () => {
           borderBottom: `2px solid ${theme.colors.other[1]}`
         })}
       >
-        <Flex align='flex-start' justify='flex-start' direction='column' gap={rem(25)} w='100%'>
+        <Flex align='flex-start' justify='flex-start' direction='column' gap={rem(25)}>
           <Text
             sx={(theme) => ({
               fontSize: rem(24),
@@ -83,7 +83,7 @@ const Footer = () => {
             </Text>
           </Flex>
         </Flex>
-        <Flex align='flex-start' justify='flex-start' direction='column' gap={rem(25)} w='100%'>
+        <Flex align='flex-start' justify='flex-start' direction='column' gap={rem(25)}>
           <Text
             sx={(theme) => ({
               fontSize: rem(24),
@@ -118,7 +118,7 @@ const Footer = () => {
             </Text>
           </Flex>
         </Flex>
-        <Flex align='flex-start' justify='flex-start' direction='column' gap={rem(25)} w='100%'>
+        <Flex align='flex-start' justify='flex-start' direction='column' gap={rem(25)}>
           <Text
             sx={(theme) => ({
               fontSize: rem(24),

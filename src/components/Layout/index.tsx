@@ -9,7 +9,7 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <Container px={rem(160)}>
+      <Container px={rem(160)} py={rem(100)}>
         <Outlet />
       </Container>
 
