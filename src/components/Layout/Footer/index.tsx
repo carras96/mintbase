@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <Container
       py={rem(85)}
-      px={rem(200)}
+      px={rem(170)}
       sx={(theme) => ({
         backgroundColor: theme.colors.background[1]
       })}

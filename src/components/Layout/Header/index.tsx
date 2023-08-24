@@ -37,7 +37,7 @@ const routes = [
 const Header = () => {
   const location = useLocation()
   return (
-    <Container py={rem(50)} px={rem(160)}>
+    <Container py={rem(55)} px={rem(170)}>
       <Flex align='center' justify='space-between'>
         <Flex align='center' justify='flex-start' gap={rem(120)}>
           <AspectRatio ratio={1} w={rem(77)}>

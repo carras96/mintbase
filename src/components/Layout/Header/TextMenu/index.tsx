@@ -22,7 +22,9 @@ const TextMenu = ({ path, isActive, isDisabled, children, ...props }: ITextMenu)
       onClick={onHandleNavigate}
       sx={(theme) => ({
         fontWeight: 700,
-        padding: `${rem(20)} ${rem(50)}`,
+        padding: `${rem(20)} 0`,
+        width: rem(160),
+        textAlign: 'center',
         color: isActive ? theme.colors.text[3] : isDisabled ? theme.colors.text[4] : theme.colors.text[0],
         borderBottom: isActive ? `3px solid ${theme.colors.text[3]}` : 'none',
         cursor: 'pointer'
