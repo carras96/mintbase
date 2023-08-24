@@ -3,7 +3,7 @@ import Header from './Header'
 import Footer from './Footer'
 import { Outlet, useLocation } from 'react-router-dom'
 import Container from '../commons/Container'
-import { rem } from '@mantine/core'
+import { Box, rem } from '@mantine/core'
 import { PlanetContext } from '../contexts/PlanetContext'
 
 const Layout = () => {
@@ -14,23 +14,20 @@ const Layout = () => {
     return location.pathname === '/' || location.pathname === '/buy-plots'
   }, [location.pathname])
   return (
-    <>
-      <Container
-        sx={(theme) => ({
-          backgroundImage: isShowBG ? `url(${planet.imageBG})` : 'unset',
-          backgroundSize: 'auto',
-          backgroundPosition: 'top',
-          backgroundRepeat: 'no-repeat'
-        })}
-      >
-        <Header />
-        <Container px={rem(170)} py={rem(100)}>
-          <Outlet />
-        </Container>
+    <Box
+      sx={(theme) => ({
+        backgroundImage: isShowBG ? `url(${planet.imageBG})` : 'unset',
+        backgroundSize: 'contain',
+        backgroundPosition: 'top',
+        backgroundRepeat: 'no-repeat'
+      })}
+    >
+      <Header />
+      <Container px={rem(170)} py={rem(100)}>
+        <Outlet />
       </Container>
-
       <Footer />
-    </>
+    </Box>
   )
 }
 

@@ -49,9 +49,9 @@ const BuyPlotsPreview = () => {
         </Flex>
       </Button>
 
-      <Flex align='center' justify='center' direction='column' gap={rem(14)} w='100%'>
+      <Flex align='center' justify='center' direction='column' gap={rem(20)} w='100%'>
         <PlotItem lvl={0} arrVal={[93, 32]} ethVal={0.01} />
-        <Divider color='#4B4B4B' size={rem(1)} w='100%' />
+        {/* <Divider color='#4B4B4B' size={rem(1)} w='100%' /> */}
         <PlotItem lvl={1} arrVal={[94, 32]} ethVal={0.01} />
         <PlotItem lvl={2} arrVal={[95, 32]} ethVal={0.01} />
         <PlotItem lvl={3} arrVal={[96, 32]} ethVal={0.01} />

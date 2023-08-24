@@ -26,7 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
             '#ACACAC'
           ],
           otherText: ['#CACACA', '#131313', '#4166EB', '#6CAFFF', '#B2B2B2'],
-          background: ['#131313', '#232323', '#2C2C2C'],
+          background: ['#131313', '#232323', '#2C2C2C', '#222'],
           button: ['#222', '#4166EB'],
           chart: ['#FFF', '#5D81FF', '#74CDFF', '#003498', '#001AFF'],
           other: ['#0052FF', '#71777D']

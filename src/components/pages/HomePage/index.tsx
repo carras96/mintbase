@@ -9,7 +9,7 @@ import MarketMaker from './MarketMaker'
 const HomePage = () => {
   return (
     <Flex w='100%' align='center' justify='flex-start' direction='column'>
-      <Flex align='center' justify='space-between' w='100%' px={rem(50)}>
+      <Flex align='flex-start' justify='space-between' w='100%'>
         <Box w='45%'>
           <PreviewMapTabs />
         </Box>
