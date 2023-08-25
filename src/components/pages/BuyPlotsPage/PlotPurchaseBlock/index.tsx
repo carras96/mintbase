@@ -1,6 +1,7 @@
 import { Flex, Text, rem, Box, Checkbox } from '@mantine/core'
 import React from 'react'
-import Button, { VARIANTS } from '~/components/commons/Button'
+import Button from '~/components/commons/Button'
+import { VARIANTS } from '~/components/commons/Button/constants'
 
 const PlotPurchaseRow = ({ data }: { data: any }) => {
   return (

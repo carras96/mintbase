@@ -1,26 +1,21 @@
 import React from 'react'
 import { ButtonProps, Button as MantineButton, rem } from '@mantine/core'
-
-export enum VARIANTS {
-  PRIMARY = 'primary',
-  SECONDARY = 'secondary',
-  TERTIARY = 'tertiary'
-}
+import { VARIANTS } from './constants'
 
 interface IButton extends ButtonProps {
   isActive?: boolean
-  isDisabled?: boolean
   variant?: VARIANTS
   onClick?: any
   height?: number
 }
 
-const Button = ({ height, onClick, variant, isActive, isDisabled, children, ...props }: IButton) => {
+const Button = ({ disabled, height, onClick, variant, isActive, children, ...props }: IButton) => {
   if (variant === VARIANTS.SECONDARY) {
     return (
       <MantineButton
         {...props}
         onClick={onClick}
+        disabled={disabled}
         px={rem(40)}
         styles={(theme) => ({
           root: {
@@ -46,6 +41,7 @@ const Button = ({ height, onClick, variant, isActive, isDisabled, children, ...p
       <MantineButton
         {...props}
         onClick={onClick}
+        disabled={disabled}
         px={rem(30)}
         py={rem(10)}
         styles={(theme) => ({
@@ -68,11 +64,42 @@ const Button = ({ height, onClick, variant, isActive, isDisabled, children, ...p
         {children}
       </MantineButton>
     )
+  } else if (variant === VARIANTS.QUATERNARY) {
+    return (
+      <MantineButton
+        {...props}
+        onClick={onClick}
+        disabled={disabled}
+        px={rem(40)}
+        styles={(theme) => ({
+          root: {
+            borderRadius: rem(45),
+            height: rem(height ? height : 55),
+            backgroundColor: theme.colors.button[1],
+
+            '&:hover': {
+              backgroundColor: theme.colors.button[0]
+            },
+
+            '&:disabled': {
+              backgroundColor: '#302F2F'
+            }
+          },
+          label: {
+            display: 'block',
+            height: 'auto'
+          }
+        })}
+      >
+        {children}
+      </MantineButton>
+    )
   } else if (variant === VARIANTS.PRIMARY) {
     return (
       <MantineButton
         {...props}
         onClick={onClick}
+        disabled={disabled}
         px={rem(40)}
         styles={(theme) => ({
           root: {
@@ -98,6 +125,7 @@ const Button = ({ height, onClick, variant, isActive, isDisabled, children, ...p
     <MantineButton
       {...props}
       onClick={onClick}
+      disabled={disabled}
       px={rem(40)}
       styles={(theme) => ({
         root: {

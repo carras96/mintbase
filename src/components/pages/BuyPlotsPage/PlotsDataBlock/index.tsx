@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Box, Flex, rem, Text } from '@mantine/core'
-import Button, { VARIANTS } from '~/components/commons/Button'
+import Button from '~/components/commons/Button'
+import { VARIANTS } from '~/components/commons/Button/constants'
 
 const InfoCard = ({ text }: { text: string }) => {
   return (

@@ -1,6 +1,7 @@
 import React from 'react'
 import { Flex, Text, rem, AspectRatio, Box } from '@mantine/core'
-import Button, { VARIANTS } from '~/components/commons/Button'
+import Button from '~/components/commons/Button'
+import { VARIANTS } from '~/components/commons/Button/constants'
 
 const PlotInfomationBlock = () => {
   return (

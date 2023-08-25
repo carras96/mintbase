@@ -1,7 +1,8 @@
 import { AspectRatio, BackgroundImage, Box, Flex, Image, Text, rem } from '@mantine/core'
 import React, { useContext, useState } from 'react'
-import Button, { VARIANTS } from '~/components/commons/Button'
+import Button from '~/components/commons/Button'
 import { MapTabs, PlanetContext } from '~/components/contexts/PlanetContext'
+import { VARIANTS } from '../Button/constants'
 
 const PreviewMapTabs = () => {
   const { planet, setSelectedPlanet } = useContext(PlanetContext)

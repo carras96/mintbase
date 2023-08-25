@@ -1,7 +1,8 @@
 import React from 'react'
 import { Box, Text, rem, Flex } from '@mantine/core'
 import CopyToClipboard from 'react-copy-to-clipboard'
-import Button, { VARIANTS } from '~/components/commons/Button'
+import Button from '~/components/commons/Button'
+import { VARIANTS } from '~/components/commons/Button/constants'
 
 const WaitListPage = () => {
   const random = Math.floor(Math.random() * 2) + 1
@@ -59,7 +60,7 @@ const WaitListPage = () => {
           </CopyToClipboard>
         </Flex>
 
-        <Flex align='center' justify='center' pp={rem(80)} w='100%'>
+        <Flex align='center' justify='center' p={rem(80)} w='100%'>
           <Text
             sx={(theme) => ({
               fontSize: rem(48),

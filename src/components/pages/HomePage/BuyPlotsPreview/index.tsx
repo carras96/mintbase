@@ -1,6 +1,7 @@
 import { Divider, Flex, Text, rem } from '@mantine/core'
 import React from 'react'
-import Button, { VARIANTS } from '~/components/commons/Button'
+import Button from '~/components/commons/Button'
+import { VARIANTS } from '~/components/commons/Button/constants'
 
 const PlotItem = ({ lvl, arrVal, ethVal }: { lvl: number; arrVal: number[]; ethVal: number }) => {
   return (

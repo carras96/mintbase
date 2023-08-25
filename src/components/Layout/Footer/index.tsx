@@ -35,7 +35,7 @@ const Footer = () => {
             About
           </Text>
 
-          <Flex align='center' justify='center' gap={rem(6)} direction='column' w='100%'>
+          <Flex align='flex-start' justify='center' gap={rem(6)} direction='column' w='100%'>
             <Text
               sx={(theme) => ({
                 lineHeight: rem(32),
@@ -97,7 +97,7 @@ const Footer = () => {
             Developer
           </Text>
 
-          <Flex align='center' justify='center' gap={rem(6)} direction='column' w='100%'>
+          <Flex align='flex-start' justify='center' gap={rem(6)} direction='column' w='100%'>
             <Text
               sx={(theme) => ({
                 lineHeight: rem(32),
@@ -132,7 +132,7 @@ const Footer = () => {
             Find us on
           </Text>
 
-          <Flex align='center' justify='center' gap={rem(6)} direction='column' w='100%'>
+          <Flex align='flex-start' justify='center' gap={rem(6)} direction='column' w='100%'>
             <Text
               sx={(theme) => ({
                 lineHeight: rem(32),

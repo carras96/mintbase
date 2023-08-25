@@ -1,3 +1,6 @@
 export { default as BookIcon } from './Icons/BookIcon'
 export { default as DivLineIcon } from './Icons/DivLineIcon'
 export { default as LineIcon } from './Icons/LineIcon'
+export { default as HeartIcon } from './Icons/HeartIcon'
+export { default as XIcon } from './Icons/XIcon'
+export { default as HoldIcon } from './Icons/HoldIcon'

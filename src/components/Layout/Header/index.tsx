@@ -3,8 +3,9 @@ import React from 'react'
 import Container from '~/components/commons/Container'
 import LogoImage from '../../../assets/images/Logo.png'
 import TextMenu from './TextMenu'
-import Button, { VARIANTS } from '~/components/commons/Button'
+import Button from '~/components/commons/Button'
 import { useLocation } from 'react-router-dom'
+import { VARIANTS } from '~/components/commons/Button/constants'
 
 const routes = [
   {

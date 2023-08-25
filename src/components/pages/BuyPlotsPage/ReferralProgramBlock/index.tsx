@@ -1,7 +1,8 @@
 import { Box, Flex, Text, rem } from '@mantine/core'
 import React, { useState } from 'react'
-import Button, { VARIANTS } from '~/components/commons/Button'
+import Button from '~/components/commons/Button'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+import { VARIANTS } from '~/components/commons/Button/constants'
 
 const ReferralProgramBlock = () => {
   const [isShowData, setIsShowData] = useState(false)
