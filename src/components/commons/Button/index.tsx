@@ -41,6 +41,33 @@ const Button = ({ height, onClick, variant, isActive, isDisabled, children, ...p
         {children}
       </MantineButton>
     )
+  } else if (variant === VARIANTS.TERTIARY) {
+    return (
+      <MantineButton
+        {...props}
+        onClick={onClick}
+        px={rem(30)}
+        py={rem(10)}
+        styles={(theme) => ({
+          root: {
+            borderRadius: rem(8),
+            height: rem(height ? height : 32),
+            backgroundColor: '#FFF',
+
+            '&:hover': {
+              transform: `scale(1.1)`,
+              backgroundColor: '#FFF'
+            }
+          },
+          label: {
+            display: 'block',
+            height: 'auto'
+          }
+        })}
+      >
+        {children}
+      </MantineButton>
+    )
   } else if (variant === VARIANTS.PRIMARY) {
     return (
       <MantineButton

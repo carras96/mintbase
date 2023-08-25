@@ -23,7 +23,7 @@ const Layout = () => {
       })}
     >
       <Header />
-      <Container px={rem(170)} py={rem(100)}>
+      <Container px={rem(170)} py={rem(50)}>
         <Outlet />
       </Container>
       <Footer />
