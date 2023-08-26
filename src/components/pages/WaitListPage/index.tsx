@@ -1,12 +1,15 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Box, Text, rem, Flex, Input } from '@mantine/core'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import Button from '~/components/commons/Button'
 import { VARIANTS } from '~/components/commons/Button/constants'
+import { PlanetContext } from '~/components/contexts/PlanetContext'
 
 const WaitListPage = () => {
   const [random, setRandom] = useState(0)
   const [code, setCode] = useState('')
+  const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
+
   return (
     <Box w='100%'>
       <Text
@@ -67,10 +70,10 @@ const WaitListPage = () => {
           </Button>
         </Flex>
 
-        <Flex align='center' justify='center' p={rem(80)} w='100%'>
+        <Flex align='center' justify='center' p={rem(isMobile ? 20 : 80)} w='100%'>
           <Text
             sx={(theme) => ({
-              fontSize: rem(48),
+              fontSize: rem(isMobile ? 28 : 48),
               fontWeight: 700,
               textAlign: 'center'
             })}
