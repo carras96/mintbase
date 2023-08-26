@@ -1,5 +1,5 @@
 import { Flex, AspectRatio, Text, rem, Box, Image } from '@mantine/core'
-import React from 'react'
+import React, { useContext } from 'react'
 
 import Image1 from '../.././../../assets/images/Image1.png'
 import Image2 from '../.././../../assets/images/Image2.png'
@@ -8,8 +8,11 @@ import Image4 from '../.././../../assets/images/Image4.png'
 import Button from '~/components/commons/Button'
 import { VARIANTS } from '~/components/commons/Button/constants'
 import { HeartIcon, HoldIcon, XIcon } from '~/components/commons/Svg'
+import { PlanetContext } from '~/components/contexts/PlanetContext'
 
 const HoldNFTBlock = () => {
+  const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
+
   return (
     <Flex
       justify='center'
@@ -24,8 +27,8 @@ const HoldNFTBlock = () => {
         backgroundColor: theme.colors.background[3]
       })}
     >
-      <Flex align='center' justify='space-between' w='100%'>
-        <Flex align='center' justify='flex-start' gap={rem(30)}>
+      <Flex align='center' justify='space-between' w='100%' direction={isMobile ? 'column' : 'row'}>
+        <Flex align='center' justify='flex-start' gap={rem(isMobile ? 16 : 30)} mb={rem(isMobile ? 16 : 0)}>
           <Flex
             align='center'
             justify='center'

@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Box, Flex, rem, Text } from '@mantine/core'
 import Button from '~/components/commons/Button'
 import { VARIANTS } from '~/components/commons/Button/constants'
+import { PlanetContext } from '~/components/contexts/PlanetContext'
 
 const InfoCard = ({ text }: { text: string }) => {
+  const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
+
   return (
     <Flex
       align='center'
@@ -15,7 +18,14 @@ const InfoCard = ({ text }: { text: string }) => {
         backgroundColor: theme.colors.background[3]
       })}
     >
-      <Text fw={700}>{text}</Text>
+      <Text
+        fw={700}
+        sx={{
+          fontSize: rem(isMobile ? 18 : 20)
+        }}
+      >
+        {text}
+      </Text>
     </Flex>
   )
 }
@@ -45,20 +55,27 @@ const DataCard = ({ texts }: { texts: string[] }) => {
 
 const PlotsDataBlock = () => {
   const [isShowData, setIsShowData] = useState(false)
+  const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
+
   return (
     <Box w='100%'>
-      <Flex align='center' justify='space-between' gap={rem(20)} mb={rem(40)}>
-        <Button variant={VARIANTS.SECONDARY} w='30%'>
+      <Flex align='center' justify='space-between' gap={rem(20)} mb={rem(40)} direction={isTablet ? 'column' : 'row'}>
+        <Button variant={VARIANTS.SECONDARY} w={isMobile ? '100%' : isTablet ? '50%' : '30%'}>
           <Text fs={rem(20)} fw={700}>
             Get ETH on Base
           </Text>
         </Button>
-        <Button variant={VARIANTS.SECONDARY} w='30%'>
+        <Button variant={VARIANTS.SECONDARY} w={isMobile ? '100%' : isTablet ? '50%' : '30%'}>
           <Text fs={rem(20)} fw={700}>
             Claimed 0.00 MBS
           </Text>
         </Button>
-        <Box w='30%'></Box>
+        <Box
+          w='30%'
+          sx={{
+            display: isTablet ? 'none' : 'block'
+          }}
+        ></Box>
       </Flex>
 
       <Flex align='center' justify='space-between' gap={rem(20)} mb={rem(20)}>

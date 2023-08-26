@@ -3,6 +3,23 @@ import React from 'react'
 import Button from '~/components/commons/Button'
 import { VARIANTS } from '~/components/commons/Button/constants'
 
+const CustomIconCheckbox = ({ indeterminate, className }: { indeterminate: boolean; className: string }) => {
+  return (
+    <Text
+      className={className}
+      sx={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        fontSize: rem(24),
+        color: '#000 !important'
+      }}
+    >
+      x
+    </Text>
+  )
+}
+
 const PlotPurchaseRow = ({ data }: { data: any }) => {
   return (
     <Flex
@@ -17,7 +34,18 @@ const PlotPurchaseRow = ({ data }: { data: any }) => {
       <Text>{data.lvl}</Text>
       <Text>{data.arrval}</Text>
       <Text>{data.ethVal}</Text>
-      <Checkbox />
+      <Checkbox
+        icon={CustomIconCheckbox}
+        size={rem(30)}
+        styles={{
+          input: {
+            '&:checked': {
+              backgroundColor: '#fff',
+              borderColor: '#fff'
+            }
+          }
+        }}
+      />
     </Flex>
   )
 }

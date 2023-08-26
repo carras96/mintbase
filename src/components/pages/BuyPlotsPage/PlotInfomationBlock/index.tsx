@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Flex, Text, rem, AspectRatio, Box } from '@mantine/core'
 import Button from '~/components/commons/Button'
 import { VARIANTS } from '~/components/commons/Button/constants'
+import { PlanetContext } from '~/components/contexts/PlanetContext'
 
 const PlotInfomationBlock = () => {
+  const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
+
   return (
     <Flex align='flex-start' justify='center' gap={rem(20)} direction='column' w='100%'>
       <Text
@@ -24,6 +27,7 @@ const PlotInfomationBlock = () => {
           borderRadius: rem(8),
           backgroundColor: theme.colors.background[3]
         })}
+        direction={isTablet ? 'column' : 'row'}
       >
         <Flex align='flex-start' justify='flex-start' gap={rem(28)}>
           <AspectRatio ratio={1} h='100%' w='100%'>

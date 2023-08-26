@@ -1,8 +1,11 @@
 import { Flex, Text, rem, AspectRatio, Box } from '@mantine/core'
-import React from 'react'
+import React, { useContext } from 'react'
 import { DivLineIcon, LineIcon } from '~/components/commons/Svg'
+import { PlanetContext } from '~/components/contexts/PlanetContext'
 
 const DistributionProceedsBlock = () => {
+  const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
+
   return (
     <Flex align='flex-start' justify='center' gap={rem(20)} direction='column' w='100%'>
       <Text
@@ -33,7 +36,15 @@ const DistributionProceedsBlock = () => {
           0.02 ETH
         </Text>
 
-        <Flex h='100%' align='center' justify='center' gap={0}>
+        <Flex
+          h='100%'
+          align='center'
+          justify='center'
+          gap={0}
+          sx={{
+            display: isMobile ? 'none' : 'flex'
+          }}
+        >
           <LineIcon />
           <DivLineIcon />
         </Flex>

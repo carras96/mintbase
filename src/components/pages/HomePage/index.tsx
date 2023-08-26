@@ -27,7 +27,7 @@ const HomePage = () => {
           justify='center'
           direction={isTablet ? 'column-reverse' : 'column'}
           gap={rem(40)}
-          w='75%'
+          w={isTablet ? '100%' : '75%'}
           p={rem(40)}
           sx={(theme) => ({
             borderRadius: rem(32),

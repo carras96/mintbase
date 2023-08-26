@@ -1,7 +1,8 @@
 import { Divider, Flex, Text, rem } from '@mantine/core'
-import React from 'react'
+import React, { useContext } from 'react'
 import Button from '~/components/commons/Button'
 import { VARIANTS } from '~/components/commons/Button/constants'
+import { PlanetContext } from '~/components/contexts/PlanetContext'
 
 const PlotItem = ({ lvl, arrVal, ethVal }: { lvl: number; arrVal: number[]; ethVal: number }) => {
   return (
@@ -16,6 +17,8 @@ const PlotItem = ({ lvl, arrVal, ethVal }: { lvl: number; arrVal: number[]; ethV
 }
 
 const BuyPlotsPreview = () => {
+  const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
+
   return (
     <Flex
       align='center'
@@ -28,15 +31,17 @@ const BuyPlotsPreview = () => {
         borderRadius: rem(16)
       })}
     >
-      <Button variant={VARIANTS.PRIMARY} height={108} w='100%'>
+      <Button variant={VARIANTS.PRIMARY} height={isMobile ? 120 : 108} w='100%'>
         <Flex align='center' justify='center' gap={rem(10)} direction='column'>
           <Text
             sx={(theme) => ({
               fontSize: rem(24),
-              fontWeight: 700
+              fontWeight: 700,
+              textWrap: 'wrap',
+              textAlign: 'center'
             })}
           >
-            BUY plots for 0.63 ETHEarn 1000 $MBS
+            BUY plots for 0.63 ETH Earn 1000 $MBS
           </Text>
           <Text
             sx={(theme) => ({

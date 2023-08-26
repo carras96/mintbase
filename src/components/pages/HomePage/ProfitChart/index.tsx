@@ -10,7 +10,7 @@ const ProfitChart = () => {
   return (
     <>
       {isTablet ? (
-        <AspectRatio ratio={253 / 616} w='100%'>
+        <AspectRatio ratio={253 / 616} w={isMobile ? '100%' : isTablet ? '30%' : '100%'}>
           <Image alt='chart' src={HomeChartMobile} />
         </AspectRatio>
       ) : (

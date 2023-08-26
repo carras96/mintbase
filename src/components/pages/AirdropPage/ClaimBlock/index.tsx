@@ -1,14 +1,49 @@
 import { Flex, Text, rem } from '@mantine/core'
-import React, { useState, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useCallback, useContext, useMemo } from 'react'
+import { PlanetContext } from '~/components/contexts/PlanetContext'
 import useGetCountDownInSeconds from '~/hooks/useGetCountDownInSeconds'
 
 const ClockBox = ({ text }: { text: number | string }) => {
+  const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
+
+  const blockSize = useMemo(() => {
+    if (isMobile) {
+    return 44
+    }
+    if (isTablet) {
+      return 60
+    }
+    if (isSmallDesktop) {
+      return 80
+    }
+    if (isMediumDesktop) {
+      return 100
+    }
+    return 120
+  }, [isMediumDesktop, isMobile, isSmallDesktop, isTablet])
+
+  const fontSize = useMemo(() => {
+    if (isMobile) {
+      return 20
+    }
+    if (isTablet) {
+      return 24
+    }
+    if (isSmallDesktop) {
+      return 28
+    }
+    if (isMediumDesktop) {
+      return 30
+    }
+    return 40
+  }, [isMediumDesktop, isMobile, isSmallDesktop, isTablet])
+
   return (
     <Flex
       align='center'
       justify='center'
-      w={rem(120)}
-      h={rem(120)}
+      w={rem(blockSize)}
+      h={rem(blockSize)}
       sx={(theme) => ({
         borderRadius: rem(8),
         backgroundColor: theme.colors.background[2]
@@ -16,7 +51,7 @@ const ClockBox = ({ text }: { text: number | string }) => {
     >
       <Text
         sx={(theme) => ({
-          fontSize: rem(40),
+          fontSize: rem(fontSize),
           fontWeight: 700
         })}
       >
@@ -28,6 +63,8 @@ const ClockBox = ({ text }: { text: number | string }) => {
 
 const ClaimBlock = () => {
   const timeUntil = useGetCountDownInSeconds(160000)
+  const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
+
   return (
     <Flex w='100%' align='center' justify='flex-start' direction='column' mt={rem(80)}>
       <Text
@@ -40,8 +77,8 @@ const ClaimBlock = () => {
         Claim will be until
       </Text>
 
-      <Flex w='100%' align='center' justify='center' gap={rem(16)} wrap='wrap'>
-        <Flex align='center' justify='center' gap={rem(12)}>
+      <Flex w='100%' align='center' justify='center' gap={rem(isMobile ? 8 : 16)} wrap='wrap'>
+        <Flex align='center' justify='center' gap={rem(isMobile ? 4 : 12)}>
           {/* {timeUntil.days
             .toString()
             .split('')
@@ -61,7 +98,7 @@ const ClaimBlock = () => {
           :
         </Text>
 
-        <Flex align='center' justify='center' gap={rem(12)}>
+        <Flex align='center' justify='center' gap={rem(isMobile ? 4 : 12)}>
           {/* {timeUntil.hours
             .toString()
             .split('')
@@ -81,7 +118,7 @@ const ClaimBlock = () => {
           :
         </Text>
 
-        <Flex align='center' justify='center' gap={rem(12)}>
+        <Flex align='center' justify='center' gap={rem(isMobile ? 4 : 12)}>
           {/* {timeUntil.minutes
             .toString()
             .split('')
@@ -101,7 +138,7 @@ const ClaimBlock = () => {
           :
         </Text>
 
-        <Flex align='center' justify='center' gap={rem(12)}>
+        <Flex align='center' justify='center' gap={rem(isMobile ? 4 : 12)}>
           {/* {timeUntil.seconds
             .toString()
             .split('')

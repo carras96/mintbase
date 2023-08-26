@@ -52,7 +52,11 @@ const ReferralProgramBlock = () => {
           >
             <Text
               sx={(theme) => ({
-                color: theme.colors.otherText[0]
+                color: theme.colors.otherText[0],
+                width: 'calc(100% - 110px)',
+                overflow: 'hidden',
+                whiteSpace: 'nowrap',
+                textOverflow: 'ellipsis'
               })}
             >
               mintBase.net/buyplots/ref1238763248

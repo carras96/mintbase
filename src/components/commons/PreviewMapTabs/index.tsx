@@ -24,6 +24,9 @@ const PreviewMapTabs = () => {
             key={tab.name}
             onClick={() => setSelectedPlanet(tab)}
             isActive={tab.name === planet.name}
+            sx={{
+              flex: 1
+            }}
           >
             <Text fw={700}>{tab.name}</Text>
           </Button>
