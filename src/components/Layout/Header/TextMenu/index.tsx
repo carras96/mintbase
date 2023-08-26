@@ -1,4 +1,4 @@
-import { Text, TextProps, rem } from '@mantine/core'
+import { Text, TextProps, createStyles, rem } from '@mantine/core'
 import React, { HTMLAttributes } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -27,7 +27,11 @@ const TextMenu = ({ path, isActive, isDisabled, children, ...props }: ITextMenu)
         textAlign: 'center',
         color: isActive ? theme.colors.text[3] : isDisabled ? theme.colors.text[4] : theme.colors.text[0],
         borderBottom: isActive ? `3px solid ${theme.colors.text[3]}` : 'none',
-        cursor: 'pointer'
+        cursor: 'pointer',
+        transition: 'all 0.3s ease-out',
+        '&:hover': {
+          transform: `scale(1.05)`
+        }
       })}
     >
       {children}

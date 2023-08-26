@@ -384,7 +384,7 @@ const HoldNFTBlock = () => {
         align='center'
         justify='space-between'
         w='100%'
-        pb={rem(40)}
+        // pb={rem(40)}
         // sx={(theme) => ({
         //   borderBottom: '1px solid #414141'
         // })}

@@ -3,6 +3,7 @@ import { Box, Text, rem, Flex } from '@mantine/core'
 import EligibilityBlock from './EligibilityBlock'
 import HoldNFTBlock from './HoldNFTBlock'
 import ClaimBlock from './ClaimBlock'
+import ChartBlock from './ChartBlock'
 
 const AirdropPage = () => {
   return (
@@ -43,6 +44,7 @@ const AirdropPage = () => {
       </Flex>
 
       <ClaimBlock />
+      <ChartBlock />
     </Box>
   )
 }

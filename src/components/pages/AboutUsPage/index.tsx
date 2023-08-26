@@ -4,10 +4,20 @@ import Button from '~/components/commons/Button'
 import { BookIcon } from '~/components/commons/Svg'
 
 import AboutUsImage from '../../../assets/images/AboutUsImage.png'
+import { VARIANTS } from '~/components/commons/Button/constants'
 
 const AboutUsPage = () => {
   return (
-    <Box w='100%' pos='relative'>
+    <Box
+      w='100%'
+      // pos='relative'
+      // sx={{
+      //   backgroundImage: `url(${AboutUsImage})`,
+      //   backgroundSize: 'contain',
+      //   backgroundPosition: 'right',
+      //   backgroundRepeat: 'no-repeat'
+      // }}
+    >
       <Box w='70%'>
         <Text
           sx={(theme) => ({
@@ -94,7 +104,7 @@ const AboutUsPage = () => {
           the ecosystem thrives.
         </Text>
 
-        <Button>
+        <Button variant={VARIANTS.PRIMARY}>
           <Flex align='center' justify='center' gap={rem(10)}>
             <BookIcon />
             <Text
@@ -108,7 +118,7 @@ const AboutUsPage = () => {
           </Flex>
         </Button>
       </Box>
-      <Box
+      {/* <Box
         pos='absolute'
         sx={(theme) => ({
           top: rem(-160),
@@ -117,7 +127,7 @@ const AboutUsPage = () => {
         })}
       >
         <Image src={AboutUsImage} alt='AboutUsImage' />
-      </Box>
+      </Box> */}
     </Box>
   )
 }

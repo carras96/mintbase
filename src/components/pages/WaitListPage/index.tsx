@@ -1,11 +1,12 @@
-import React from 'react'
-import { Box, Text, rem, Flex } from '@mantine/core'
+import React, { useState } from 'react'
+import { Box, Text, rem, Flex, Input } from '@mantine/core'
 import CopyToClipboard from 'react-copy-to-clipboard'
 import Button from '~/components/commons/Button'
 import { VARIANTS } from '~/components/commons/Button/constants'
 
 const WaitListPage = () => {
-  const random = Math.floor(Math.random() * 2) + 1
+  const [random, setRandom] = useState(0)
+  const [code, setCode] = useState('')
   return (
     <Box w='100%'>
       <Text
@@ -34,30 +35,36 @@ const WaitListPage = () => {
           justify='space-between'
           w='100%'
           p={rem(20)}
+          gap={rem(20)}
           sx={(theme) => ({
             borderRadius: rem(8),
             backgroundColor: theme.colors.background[0]
           })}
         >
-          <Text
-            sx={(theme) => ({
-              color: theme.colors.otherText[0]
+          <Input
+            placeholder='Enter code'
+            value={code}
+            onChange={(v) => setCode(v.target.value)}
+            w='100%'
+            styles={(theme) => ({
+              input: {
+                border: 'none',
+                backgroundColor: 'transparent',
+                fontSize: rem(20),
+                color: theme.colors.otherText[0]
+              }
             })}
-          >
-            mintBase.net/buyplots/ref1238763248
-          </Text>
-          <CopyToClipboard text={'mintBase.net/buyplots/ref1238763248'}>
-            <Button variant={VARIANTS.TERTIARY} height={40}>
-              <Text
-                fw={700}
-                sx={(theme) => ({
-                  color: theme.colors.otherText[1]
-                })}
-              >
-                Copy
-              </Text>
-            </Button>
-          </CopyToClipboard>
+          />
+          <Button variant={VARIANTS.TERTIARY} height={40} onClick={() => setRandom(Math.floor(Math.random() * 2) + 1)}>
+            <Text
+              fw={700}
+              sx={(theme) => ({
+                color: theme.colors.otherText[1]
+              })}
+            >
+              Check
+            </Text>
+          </Button>
         </Flex>
 
         <Flex align='center' justify='center' p={rem(80)} w='100%'>
@@ -70,7 +77,9 @@ const WaitListPage = () => {
           >
             {random === 1
               ? 'Congratulations, you are on the Waitlist!!'
-              : ':( Looks like this wallet isn’t eligible. No stress, join the waitlist by participating in our airdrop.'}
+              : random === 2
+              ? ':( Looks like this wallet isn’t eligible. No stress, join the waitlist by participating in our airdrop.'
+              : ''}
           </Text>
         </Flex>
         <Flex align='center' justify='center' w='100%'>

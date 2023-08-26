@@ -2,6 +2,25 @@ import React from 'react'
 import Container from '~/components/commons/Container'
 import { Flex, Text, rem } from '@mantine/core'
 
+const TextFooter = ({ children }: React.PropsWithChildren) => {
+  return (
+    <Text
+      sx={(theme) => ({
+        lineHeight: rem(32),
+        textTransform: 'capitalize',
+        color: theme.colors.text[2],
+        cursor: 'pointer',
+        transition: 'all 0.3s ease-out',
+        '&:hover': {
+          transform: `scale(1.05)`
+        }
+      })}
+    >
+      {children}
+    </Text>
+  )
+}
+
 const Footer = () => {
   return (
     <Container
@@ -36,51 +55,11 @@ const Footer = () => {
           </Text>
 
           <Flex align='flex-start' justify='center' gap={rem(6)} direction='column' w='100%'>
-            <Text
-              sx={(theme) => ({
-                lineHeight: rem(32),
-                textTransform: 'capitalize',
-                color: theme.colors.text[2]
-              })}
-            >
-              Contact
-            </Text>
-            <Text
-              sx={(theme) => ({
-                lineHeight: rem(32),
-                textTransform: 'capitalize',
-                color: theme.colors.text[2]
-              })}
-            >
-              News
-            </Text>
-            <Text
-              sx={(theme) => ({
-                lineHeight: rem(32),
-                textTransform: 'capitalize',
-                color: theme.colors.text[2]
-              })}
-            >
-              Term of use
-            </Text>
-            <Text
-              sx={(theme) => ({
-                lineHeight: rem(32),
-                textTransform: 'capitalize',
-                color: theme.colors.text[2]
-              })}
-            >
-              Referral Terms
-            </Text>
-            <Text
-              sx={(theme) => ({
-                lineHeight: rem(32),
-                textTransform: 'capitalize',
-                color: theme.colors.text[2]
-              })}
-            >
-              Brand Asset
-            </Text>
+            <TextFooter>Contact</TextFooter>
+            <TextFooter>News</TextFooter>
+            <TextFooter>Term of use</TextFooter>
+            <TextFooter>Referral Terms</TextFooter>
+            <TextFooter>Brand Asset</TextFooter>
           </Flex>
         </Flex>
         <Flex align='flex-start' justify='flex-start' direction='column' gap={rem(25)}>
@@ -98,24 +77,8 @@ const Footer = () => {
           </Text>
 
           <Flex align='flex-start' justify='center' gap={rem(6)} direction='column' w='100%'>
-            <Text
-              sx={(theme) => ({
-                lineHeight: rem(32),
-                textTransform: 'capitalize',
-                color: theme.colors.text[2]
-              })}
-            >
-              Docs
-            </Text>
-            <Text
-              sx={(theme) => ({
-                lineHeight: rem(32),
-                textTransform: 'capitalize',
-                color: theme.colors.text[2]
-              })}
-            >
-              Github
-            </Text>
+            <TextFooter>Docs</TextFooter>
+            <TextFooter>Github</TextFooter>
           </Flex>
         </Flex>
         <Flex align='flex-start' justify='flex-start' direction='column' gap={rem(25)}>
@@ -133,33 +96,9 @@ const Footer = () => {
           </Text>
 
           <Flex align='flex-start' justify='center' gap={rem(6)} direction='column' w='100%'>
-            <Text
-              sx={(theme) => ({
-                lineHeight: rem(32),
-                textTransform: 'capitalize',
-                color: theme.colors.text[2]
-              })}
-            >
-              Twitter
-            </Text>
-            <Text
-              sx={(theme) => ({
-                lineHeight: rem(32),
-                textTransform: 'capitalize',
-                color: theme.colors.text[2]
-              })}
-            >
-              Discord
-            </Text>
-            <Text
-              sx={(theme) => ({
-                lineHeight: rem(32),
-                textTransform: 'capitalize',
-                color: theme.colors.text[2]
-              })}
-            >
-              Mirror
-            </Text>
+            <TextFooter>Twitter</TextFooter>
+            <TextFooter>Discord</TextFooter>
+            <TextFooter>Mirror</TextFooter>
           </Flex>
         </Flex>
       </Flex>
