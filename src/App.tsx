@@ -6,36 +6,39 @@ import AirdropPage from './components/pages/AirdropPage'
 import WaitListPage from './components/pages/WaitListPage'
 import AboutUsPage from './components/pages/AboutUsPage'
 
-const router = createBrowserRouter([
-  {
-    id: 'root',
-    path: '/',
-    Component: Layout,
-    errorElement: <p>Error</p>,
-    children: [
-      {
-        index: true,
-        Component: HomePage
-      },
-      {
-        path: 'buy-plots',
-        Component: BuyPlotsPage
-      },
-      {
-        path: 'airdrop',
-        Component: AirdropPage
-      },
-      {
-        path: 'wait-list',
-        Component: WaitListPage
-      },
-      {
-        path: 'about-us',
-        Component: AboutUsPage
-      }
-    ]
-  }
-])
+const router = createBrowserRouter(
+  [
+    {
+      id: 'root',
+      path: '/',
+      Component: Layout,
+      errorElement: <p>Error</p>,
+      children: [
+        {
+          index: true,
+          Component: HomePage
+        },
+        {
+          path: 'buy-plots',
+          Component: BuyPlotsPage
+        },
+        {
+          path: 'airdrop',
+          Component: AirdropPage
+        },
+        {
+          path: 'wait-list',
+          Component: WaitListPage
+        },
+        {
+          path: 'about-us',
+          Component: AboutUsPage
+        }
+      ]
+    }
+  ],
+  { basename: '/mintbase' }
+)
 
 function App() {
   return <RouterProvider router={router} />
