@@ -1,17 +1,19 @@
 import { AspectRatio, Box, Flex, Image, Text, rem } from '@mantine/core'
-import React from 'react'
+import React, { useContext } from 'react'
 
 import Decentralised from '../../../../assets/images/Decentralised.png'
 import Lock from '../../../../assets/images/Lock.png'
 import Paper from '../../../../assets/images/Paper.png'
 import BoxImg from '../../../../assets/images/Box.png'
+import { PlanetContext } from '~/components/contexts/PlanetContext'
 
 const MBSUtilities = () => {
+  const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
   return (
-    <Flex align='center' justify='center' w='100%' direction='column' gap={rem(80)}>
+    <Flex align='center' justify='center' w='100%' direction='column' gap={rem(isTablet ? 40 : 80)}>
       <Text
         sx={(theme) => ({
-          fontSize: rem(64),
+          fontSize: rem(48),
           fontWeight: 700,
           textTransform: 'capitalize'
         })}
@@ -19,8 +21,8 @@ const MBSUtilities = () => {
         $MBS Utilities
       </Text>
 
-      <Flex align='center' justify='space-between'>
-        <Box w='50%'>
+      <Flex align='center' justify='space-between' direction={isTablet ? 'column' : 'row'}>
+        <Box w={isTablet ? '100%' : '50%'}>
           <Flex align='flex-start' justify='center' direction='column' gap={rem(24)}>
             <Text
               sx={(theme) => ({
@@ -44,20 +46,20 @@ const MBSUtilities = () => {
             </Text>
           </Flex>
         </Box>
-        <Box w='30%'>
+        <Box w={isTablet ? '100%' : '30%'}>
           <AspectRatio ratio={1} w='100%'>
             <Image src={Decentralised} alt='Decentralised' />
           </AspectRatio>
         </Box>
       </Flex>
 
-      <Flex align='center' justify='space-between'>
-        <Box w='30%'>
+      <Flex align='center' justify='space-between' direction={isTablet ? 'column-reverse' : 'row'}>
+        <Box w={isTablet ? '100%' : '30%'}>
           <AspectRatio ratio={1} w='100%'>
             <Image src={Lock} alt='Lock' />
           </AspectRatio>
         </Box>
-        <Box w='50%'>
+        <Box w={isTablet ? '100%' : '50%'}>
           <Flex align='flex-start' justify='center' direction='column' gap={rem(24)}>
             <Text
               sx={(theme) => ({
@@ -83,8 +85,8 @@ const MBSUtilities = () => {
         </Box>
       </Flex>
 
-      <Flex align='center' justify='space-between'>
-        <Box w='50%'>
+      <Flex align='center' justify='space-between' direction={isTablet ? 'column' : 'row'}>
+        <Box w={isTablet ? '100%' : '50%'}>
           <Flex align='flex-start' justify='center' direction='column' gap={rem(24)}>
             <Text
               sx={(theme) => ({
@@ -108,20 +110,20 @@ const MBSUtilities = () => {
             </Text>
           </Flex>
         </Box>
-        <Box w='30%'>
+        <Box w={isTablet ? '100%' : '30%'}>
           <AspectRatio ratio={1} w='100%'>
             <Image src={Paper} alt='Paper' />
           </AspectRatio>
         </Box>
       </Flex>
 
-      <Flex align='center' justify='space-between'>
-        <Box w='30%'>
+      <Flex align='center' justify='space-between' direction={isTablet ? 'column-reverse' : 'row'}>
+        <Box w={isTablet ? '100%' : '30%'}>
           <AspectRatio ratio={1} w='100%'>
             <Image src={BoxImg} alt='Box' />
           </AspectRatio>
         </Box>
-        <Box w='50%'>
+        <Box w={isTablet ? '100%' : '50%'}>
           <Flex align='flex-start' justify='center' direction='column' gap={rem(24)}>
             <Text
               sx={(theme) => ({
@@ -147,12 +149,12 @@ const MBSUtilities = () => {
         </Box>
       </Flex>
 
-      <Flex justify='center' gap={rem(40)}>
+      <Flex justify='center' gap={rem(40)} direction={isTablet ? 'column-reverse' : 'row'}>
         <Flex
           align='center'
           justify='center'
           direction='column'
-          w='50%'
+          w={isTablet ? '100%' : '50%'}
           gap={rem(12)}
           p={rem(40)}
           sx={(theme) => ({
@@ -186,7 +188,7 @@ const MBSUtilities = () => {
           align='center'
           justify='center'
           direction='column'
-          w='50%'
+          w={isTablet ? '100%' : '50%'}
           gap={rem(12)}
           p={rem(40)}
           sx={(theme) => ({

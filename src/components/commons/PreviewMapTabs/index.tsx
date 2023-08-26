@@ -5,7 +5,9 @@ import { MapTabs, PlanetContext } from '~/components/contexts/PlanetContext'
 import { VARIANTS } from '../Button/constants'
 
 const PreviewMapTabs = () => {
-  const { planet, setSelectedPlanet } = useContext(PlanetContext)
+  const { planet, setSelectedPlanet, isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } =
+    useContext(PlanetContext)
+
   return (
     <Flex align='center' justify='center' gap={rem(20)} direction='column'>
       <BackgroundImage src={planet.imagePlanet} w='100%' p={rem(60)}>
@@ -15,7 +17,7 @@ const PreviewMapTabs = () => {
           </AspectRatio>
         </Flex>
       </BackgroundImage>
-      <Flex align='center' justify='space-around' gap={rem(10)} px={rem(60)}>
+      <Flex align='center' justify='center' gap={rem(10)} px={rem(60)} wrap={'wrap'} w='100%'>
         {MapTabs.map((tab) => (
           <Button
             variant={VARIANTS.SECONDARY}

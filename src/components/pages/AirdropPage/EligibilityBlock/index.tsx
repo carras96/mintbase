@@ -12,7 +12,7 @@ const EligibilityBlock = () => {
   const [code, setCode] = useState('')
 
   return (
-    <Box w='50%'>
+    <Box w='100%'>
       {!isConnectWallet && (
         <Flex
           justify='center'

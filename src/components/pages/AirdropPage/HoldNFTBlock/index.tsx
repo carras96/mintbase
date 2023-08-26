@@ -18,7 +18,7 @@ const HoldNFTBlock = () => {
       gap={rem(40)}
       px={rem(40)}
       py={rem(80)}
-      w='50%'
+      w='100%'
       sx={(theme) => ({
         borderRadius: rem(16),
         backgroundColor: theme.colors.background[3]

@@ -1,12 +1,15 @@
 import { Box, Text, rem, Flex, Image } from '@mantine/core'
-import React from 'react'
+import React, { useContext } from 'react'
 import Button from '~/components/commons/Button'
 import { BookIcon } from '~/components/commons/Svg'
 
 import AboutUsImage from '../../../assets/images/AboutUsImage.png'
 import { VARIANTS } from '~/components/commons/Button/constants'
+import { PlanetContext } from '~/components/contexts/PlanetContext'
 
 const AboutUsPage = () => {
+  const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
+
   return (
     <Box
       w='100%'
@@ -17,8 +20,10 @@ const AboutUsPage = () => {
       //   backgroundPosition: 'right',
       //   backgroundRepeat: 'no-repeat'
       // }}
+      px={rem(isTablet ? 30 : 0)}
+      pb={rem(isTablet ? 30 : 0)}
     >
-      <Box w='70%'>
+      <Box w={isTablet ? '100%' : '70%'}>
         <Text
           sx={(theme) => ({
             fontSize: rem(36),

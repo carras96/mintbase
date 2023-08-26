@@ -1,11 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Box, Flex, Image, Text, rem } from '@mantine/core'
 import MarketLogo from '../../../../assets/images/MarketLogo.png'
+import { PlanetContext } from '~/components/contexts/PlanetContext'
 
 const MarketMaker = () => {
+  const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
+
   return (
-    <Flex align='center' justify='space-between' gap={rem(80)} w='100%'>
-      <Flex align='flex-start' justify='center' gap={rem(64)} direction='column' w='40%'>
+    <Flex
+      align='center'
+      justify='space-between'
+      gap={rem(isTablet ? 40 : 80)}
+      w='100%'
+      direction={isTablet ? 'column' : 'row'}
+    >
+      <Flex
+        align='flex-start'
+        justify='center'
+        gap={rem(isTablet ? 32 : 64)}
+        direction='column'
+        w={isTablet ? '100%' : '40%'}
+      >
         <Text
           sx={(theme) => ({
             fontSize: rem(40),
@@ -25,7 +40,7 @@ const MarketMaker = () => {
           fontWeight: 400,
           textTransform: 'capitalize',
           color: theme.colors.text[2],
-          width: '60%'
+          width: isTablet ? '100%' : '60%'
         })}
       >
         In the financial markets, Quantum Optermuik offers expertise beyond market-making to sculpt growth

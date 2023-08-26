@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext, useMemo } from 'react'
 import Container from '~/components/commons/Container'
 import { Flex, Text, rem } from '@mantine/core'
+import { PlanetContext } from '~/components/contexts/PlanetContext'
 
 const TextFooter = ({ children }: React.PropsWithChildren) => {
   return (
@@ -22,10 +23,76 @@ const TextFooter = ({ children }: React.PropsWithChildren) => {
 }
 
 const Footer = () => {
+  const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
+
+  const pxNumber = useMemo(() => {
+    if (isMobile) {
+      return 40
+    }
+    if (isTablet) {
+      return 40
+    }
+    if (isSmallDesktop) {
+      return 50
+    }
+    if (isMediumDesktop) {
+      return 80
+    }
+    return 170
+  }, [isMediumDesktop, isMobile, isSmallDesktop, isTablet])
+
+  const pyNumber = useMemo(() => {
+    if (isMobile) {
+      return 40
+    }
+    if (isTablet) {
+      return 40
+    }
+    if (isSmallDesktop) {
+      return 40
+    }
+    if (isMediumDesktop) {
+      return 50
+    }
+    return 85
+  }, [isMediumDesktop, isMobile, isSmallDesktop, isTablet])
+
+  const gapMenuFooter = useMemo(() => {
+    if (isMobile) {
+      return 40
+    }
+    if (isTablet) {
+      return 50
+    }
+    if (isSmallDesktop) {
+      return 80
+    }
+    if (isMediumDesktop) {
+      return 130
+    }
+    return 180
+  }, [isMediumDesktop, isMobile, isSmallDesktop, isTablet])
+
+  const pbFlex = useMemo(() => {
+    if (isMobile) {
+      return 15
+    }
+    if (isTablet) {
+      return 30
+    }
+    if (isSmallDesktop) {
+      return 40
+    }
+    if (isMediumDesktop) {
+      return 50
+    }
+    return 60
+  }, [isMediumDesktop, isMobile, isSmallDesktop, isTablet])
+
   return (
     <Container
-      py={rem(85)}
-      px={rem(170)}
+      py={rem(pyNumber)}
+      px={rem(pxNumber)}
       sx={(theme) => ({
         backgroundColor: theme.colors.background[1]
       })}
@@ -33,9 +100,10 @@ const Footer = () => {
       <Flex
         align='flex-start'
         justify='center'
-        gap={rem(180)}
-        pb={rem(60)}
+        gap={rem(gapMenuFooter)}
+        pb={rem(pbFlex)}
         w='100%'
+        direction={isMobile ? 'column' : 'row'}
         sx={(theme) => ({
           borderBottom: `2px solid ${theme.colors.other[1]}`
         })}

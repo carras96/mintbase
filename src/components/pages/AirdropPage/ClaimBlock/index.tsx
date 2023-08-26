@@ -40,7 +40,7 @@ const ClaimBlock = () => {
         Claim will be until
       </Text>
 
-      <Flex w='100%' align='center' justify='center' gap={rem(16)}>
+      <Flex w='100%' align='center' justify='center' gap={rem(16)} wrap='wrap'>
         <Flex align='center' justify='center' gap={rem(12)}>
           {/* {timeUntil.days
             .toString()

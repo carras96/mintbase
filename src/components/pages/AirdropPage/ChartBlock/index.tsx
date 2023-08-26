@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Flex, rem, Text, createStyles, Box } from '@mantine/core'
 import Button from '~/components/commons/Button'
 import { VARIANTS } from '~/components/commons/Button/constants'
 import ReactEcharts, { EChartsOption } from 'echarts-for-react'
+import { PlanetContext } from '~/components/contexts/PlanetContext'
 
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles((theme, { isTablet, isMobile }: { isTablet: boolean, isMobile: boolean }) => ({
   boxChart: {
     '.echarts-for-react': {
-      height: '100% !important',
+      height: isMobile ? '300px !important' : isTablet ? '400px !important' : '100% !important',
       aspectRatio: '1'
     }
   }
@@ -127,7 +128,9 @@ const LegendItemChart = ({ item }: { item: any }) => {
 }
 
 const ChartBlock = () => {
-  const { classes } = useStyles()
+  const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
+  const { classes } = useStyles({ isTablet, isMobile })
+
   return (
     <Flex
       align='center'
@@ -139,8 +142,9 @@ const ChartBlock = () => {
         borderRadius: rem(32),
         backgroundColor: theme.colors.background[3]
       })}
+      direction={isTablet ? 'column' : 'row'}
     >
-      <Flex align='flex-start' justify='center' direction='column' gap={rem(12)} w='45%'>
+      <Flex align='flex-start' justify='center' direction='column' gap={rem(12)} w={isTablet ? '100%' : '45%'}>
         <Text
           sx={(theme) => ({
             fontSize: rem(32),
@@ -185,9 +189,18 @@ const ChartBlock = () => {
           </Button>
         </Flex>
       </Flex>
-      <Flex align='center' justify='flex-end' w='45%' h={rem(500)} className={classes.boxChart} gap={rem(20)}>
+      <Flex
+        align='center'
+        justify='flex-end'
+        w={isTablet ? '100%' : '45%'}
+        h={isTablet ? 'auto' : rem(500)}
+        className={classes.boxChart}
+        gap={rem(20)}
+        direction={isTablet ? 'column' : 'row'}
+        mt={rem(isTablet ? 40 : 0)}
+      >
         <PieChart />
-        <Flex align='flex-start' justify='center' direction='column' gap={rem(20)}>
+        <Flex align='flex-start' justify='center' direction={!isTablet ? 'column' : 'row'} gap={rem(20)} wrap={'wrap'}>
           {dataChart.map((d) => (
             <LegendItemChart item={d} key={d.name} />
           ))}

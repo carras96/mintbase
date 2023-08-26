@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Box, Text, rem, Flex } from '@mantine/core'
 import EligibilityBlock from './EligibilityBlock'
 import HoldNFTBlock from './HoldNFTBlock'
 import ClaimBlock from './ClaimBlock'
 import ChartBlock from './ChartBlock'
+import { PlanetContext } from '~/components/contexts/PlanetContext'
 
 const AirdropPage = () => {
+  const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
+
   return (
     <Box w='100%'>
       <Text
@@ -38,7 +41,7 @@ const AirdropPage = () => {
         your MBB holdings. The more MBB you own, the more MBS you get.
       </Text>
 
-      <Flex align='flex-start' justify='center' gap={rem(24)} w='100%'>
+      <Flex align='flex-start' justify='center' gap={rem(24)} w='100%' direction={isTablet ? 'column' : 'row'}>
         <EligibilityBlock />
         <HoldNFTBlock />
       </Flex>
