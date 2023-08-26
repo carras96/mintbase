@@ -91,7 +91,8 @@ const WaitListPage = () => {
               fontSize: rem(24),
               fontWeight: 400,
               fontStyle: 'italic',
-              color: '#B0B0B0'
+              color: '#B0B0B0',
+              textAlign: 'center'
             })}
           >
             Conditions: You have entered the code on the "
