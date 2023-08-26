@@ -4,7 +4,7 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/mintbase',
+  base: '/mintbase/',
   plugins: [react()],
   server: {
     port: 3000
