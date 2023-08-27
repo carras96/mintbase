@@ -16,23 +16,28 @@ const router = createBrowserRouter(
       children: [
         {
           index: true,
-          Component: HomePage
+          Component: HomePage,
+          errorElement: <p>Error</p>
         },
         {
           path: 'buy-plots',
-          Component: BuyPlotsPage
+          Component: BuyPlotsPage,
+          errorElement: <p>Error</p>
         },
         {
           path: 'airdrop',
-          Component: AirdropPage
+          Component: AirdropPage,
+          errorElement: <p>Error</p>
         },
         {
           path: 'wait-list',
-          Component: WaitListPage
+          Component: WaitListPage,
+          errorElement: <p>Error</p>
         },
         {
           path: 'about-us',
-          Component: AboutUsPage
+          Component: AboutUsPage,
+          errorElement: <p>Error</p>
         }
       ]
     }
