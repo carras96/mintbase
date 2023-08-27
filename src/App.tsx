@@ -40,6 +40,31 @@ const router = createBrowserRouter(
           errorElement: <p>Error</p>
         }
       ]
+    },
+    {
+      index: true,
+      Component: HomePage,
+      errorElement: <p>Error</p>
+    },
+    {
+      path: 'buy-plots',
+      Component: BuyPlotsPage,
+      errorElement: <p>Error</p>
+    },
+    {
+      path: 'airdrop',
+      Component: AirdropPage,
+      errorElement: <p>Error</p>
+    },
+    {
+      path: 'wait-list',
+      Component: WaitListPage,
+      errorElement: <p>Error</p>
+    },
+    {
+      path: '/about-usssss',
+      Component: AboutUsPage,
+      errorElement: <p>Error</p>
     }
   ],
   { basename: '/' }
