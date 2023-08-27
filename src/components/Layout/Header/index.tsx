@@ -113,7 +113,7 @@ const Header = () => {
       {isTablet ? (
         <Container py={rem(pyNumber)} px={rem(pxNumber)}>
           <Flex align='center' justify='center' pos='relative'>
-            <AspectRatio ratio={1} w={rem(isMobile ? 40 : 50)}>
+            <AspectRatio ratio={1} w={rem(isMobile ? 40 : 50)} onClick={() => onHandleNavigate('/', false)}>
               <Image src={LogoImage} alt='Logo' />
             </AspectRatio>
             <Box

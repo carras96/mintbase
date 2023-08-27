@@ -4,8 +4,10 @@ import CopyToClipboard from 'react-copy-to-clipboard'
 import Button from '~/components/commons/Button'
 import { VARIANTS } from '~/components/commons/Button/constants'
 import { PlanetContext } from '~/components/contexts/PlanetContext'
+import { useNavigate } from 'react-router-dom'
 
 const WaitListPage = () => {
+  const navigate = useNavigate()
   const [random, setRandom] = useState(0)
   const [code, setCode] = useState('')
   const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
@@ -103,8 +105,10 @@ const WaitListPage = () => {
                 fontStyle: 'italic',
                 color: theme.colors.text[3],
                 textDecorationLine: 'underline',
-                display: 'inline-block'
+                display: 'inline-block',
+                cursor: 'pointer'
               })}
+              onClick={() => navigate('/airdrop')}
             >
               Airdrop
             </Text>

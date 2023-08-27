@@ -3,7 +3,11 @@ import Container from '~/components/commons/Container'
 import { Flex, Text, rem } from '@mantine/core'
 import { PlanetContext } from '~/components/contexts/PlanetContext'
 
-const TextFooter = ({ children }: React.PropsWithChildren) => {
+interface ITextFooter extends React.PropsWithChildren {
+  onClick?: any
+}
+
+const TextFooter = ({ children, onClick }: ITextFooter) => {
   return (
     <Text
       sx={(theme) => ({
@@ -16,6 +20,9 @@ const TextFooter = ({ children }: React.PropsWithChildren) => {
           transform: `scale(1.05)`
         }
       })}
+      onClick={() => {
+        onClick && onClick()
+      }}
     >
       {children}
     </Text>
@@ -24,6 +31,13 @@ const TextFooter = ({ children }: React.PropsWithChildren) => {
 
 const Footer = () => {
   const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
+
+  //open link
+  const openInNewTab = (url: string) => {
+    if (window) {
+      window?.open(url, '_blank')?.focus()
+    }
+  }
 
   const pxNumber = useMemo(() => {
     if (isMobile) {
@@ -123,6 +137,9 @@ const Footer = () => {
           </Text>
 
           <Flex align='flex-start' justify='center' gap={rem(6)} direction='column' w='100%'>
+            {/* //example */}
+            {/* <TextFooter onClick={() => openInNewTab('https://www.google.com.vn/')}>Contact</TextFooter> */}
+
             <TextFooter>Contact</TextFooter>
             <TextFooter>News</TextFooter>
             <TextFooter>Term of use</TextFooter>

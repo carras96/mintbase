@@ -23,7 +23,7 @@ const MBSUtilities = () => {
 
       <Flex align='center' justify='space-between' direction={isTablet ? 'column' : 'row'}>
         <Box w={isTablet ? '100%' : '50%'} mb={rem(isTablet ? 30 : 0)}>
-          <Flex align='flex-start' justify='center' direction='column' gap={rem(24)}>
+          <Flex align={isTablet ? 'center' : 'flex-start'} justify='center' direction='column' gap={rem(24)}>
             <Text
               sx={(theme) => ({
                 fontSize: rem(32),
@@ -37,7 +37,9 @@ const MBSUtilities = () => {
               sx={(theme) => ({
                 fontSize: rem(24),
                 fontWeight: 400,
-                textTransform: 'capitalize'
+                textTransform: 'capitalize',
+                textAlign: isTablet ? 'center' : 'left'
+
               })}
             >
               Token holders can become members of mintBase, exclusive access to certain features, events within a
@@ -60,7 +62,7 @@ const MBSUtilities = () => {
           </AspectRatio>
         </Box>
         <Box w={isTablet ? '100%' : '50%'} mb={rem(isTablet ? 30 : 0)}>
-          <Flex align='flex-start' justify='center' direction='column' gap={rem(24)}>
+          <Flex align={isTablet ? 'center' : 'flex-start'} justify='center' direction='column' gap={rem(24)}>
             <Text
               sx={(theme) => ({
                 fontSize: rem(32),
@@ -74,7 +76,9 @@ const MBSUtilities = () => {
               sx={(theme) => ({
                 fontSize: rem(24),
                 fontWeight: 400,
-                textTransform: 'capitalize'
+                textTransform: 'capitalize',
+                textAlign: isTablet ? 'center' : 'left'
+
               })}
             >
               Making: $MBS holders could be given voting power or influence over certain decisions within the project.
@@ -87,12 +91,12 @@ const MBSUtilities = () => {
 
       <Flex align='center' justify='space-between' direction={isTablet ? 'column' : 'row'}>
         <Box w={isTablet ? '100%' : '50%'} mb={rem(isTablet ? 30 : 0)}>
-          <Flex align='flex-start' justify='center' direction='column' gap={rem(24)}>
+          <Flex align={isTablet ? 'center' : 'flex-start'}  justify='center' direction='column' gap={rem(24)}>
             <Text
               sx={(theme) => ({
                 fontSize: rem(32),
                 fontWeight: 700,
-                textTransform: 'capitalize'
+                textTransform: 'capitalize',
               })}
             >
               Royalties and Revenue Sharing
@@ -101,7 +105,8 @@ const MBSUtilities = () => {
               sx={(theme) => ({
                 fontSize: rem(24),
                 fontWeight: 400,
-                textTransform: 'capitalize'
+                textTransform: 'capitalize',
+                textAlign: isTablet ? 'center' : 'left'
               })}
             >
               Receiving a percentage of the revenue generated from secondary sales of their NFTs. This incentivizes
@@ -124,7 +129,7 @@ const MBSUtilities = () => {
           </AspectRatio>
         </Box>
         <Box w={isTablet ? '100%' : '50%'} mb={rem(isTablet ? 30 : 0)}>
-          <Flex align='flex-start' justify='center' direction='column' gap={rem(24)}>
+          <Flex align={isTablet ? 'center' : 'flex-start'} justify='center' direction='column' gap={rem(24)}>
             <Text
               sx={(theme) => ({
                 fontSize: rem(32),
@@ -138,7 +143,8 @@ const MBSUtilities = () => {
               sx={(theme) => ({
                 fontSize: rem(24),
                 fontWeight: 400,
-                textTransform: 'capitalize'
+                textTransform: 'capitalize',
+                textAlign: isTablet ? 'center' : 'left'
               })}
             >
               $MBS holders might be able to stake their tokens in order to earn rewards, such as additional NFTs,
