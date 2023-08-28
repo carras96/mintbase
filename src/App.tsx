@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, RouterProvider, Routes, createBrowserRouter } from 'react-router-dom'
+import { BrowserRouter, HashRouter, Route, RouterProvider, Routes, createBrowserRouter } from 'react-router-dom'
 import Layout from './components/Layout'
 import HomePage from './components/pages/HomePage'
 import BuyPlotsPage from './components/pages/BuyPlotsPage'
@@ -51,7 +51,7 @@ import AboutUsPage from './components/pages/AboutUsPage'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<HomePage />} />
@@ -66,7 +66,7 @@ function App() {
           <Route path='*' element={<p>Error</p>} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
