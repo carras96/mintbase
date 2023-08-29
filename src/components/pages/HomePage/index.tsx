@@ -13,10 +13,10 @@ const HomePage = () => {
   return (
     <Flex w='100%' align='center' justify='flex-start' direction='column'>
       <Flex align='flex-start' justify='space-between' w='100%' direction={isTablet ? 'column' : 'row'}>
-        <Box w={isTablet ? '100%' : '45%'} mb={isTablet ? rem(25) : rem(0)}>
+        <Box w={isTablet ? '100%' : '50%'} mb={isTablet ? rem(25) : rem(0)}>
           <PreviewMapTabs />
         </Box>
-        <Box w={isTablet ? '100%' : '45%'}>
+        <Box w={isTablet ? '100%' : '50%'} pt={rem(60)}>
           <BuyPlotsPreview />
         </Box>
       </Flex>

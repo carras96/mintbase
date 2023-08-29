@@ -14,10 +14,10 @@ const BuyPlotsPage = () => {
   return (
     <Flex w='100%' align='center' justify='flex-start' direction='column'>
       <Flex align='flex-start' justify='flex-start' w='100%' direction={isTablet ? 'column' : 'row'}>
-        <Box w={isTablet ? '100%' : '45%'} mb={rem(isTablet ? 40 : 0)}>
+        <Box w={isTablet ? '100%' : '50%'} mb={rem(isTablet ? 40 : 0)}>
           <PreviewMapTabs />
         </Box>
-        <Box w={isTablet ? '100%' : '55%'}>
+        <Box w={isTablet ? '100%' : '50%'} pt={rem(60)}>
           <Flex w='100%' align='center' justify='center' direction='column' gap={rem(32)}>
             <PlotsDataBlock />
             <ReferralProgramBlock />
