@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react'
 import Button from '~/components/commons/Button'
 import { MapTabs, PlanetContext } from '~/components/contexts/PlanetContext'
 import { VARIANTS } from '../Button/constants'
+import MapPixels from './MapPixels'
 
 const PreviewMapTabs = () => {
   const { planet, setSelectedPlanet, isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } =
@@ -13,7 +14,8 @@ const PreviewMapTabs = () => {
       <BackgroundImage src={planet.imagePlanet} w='100%' p={rem(60)}>
         <Flex align='center' justify='center' w='100%'>
           <AspectRatio ratio={1} w='100%'>
-            <Image src={planet.image} alt='map' />
+            {/* <Image src={planet.image} alt='map' /> */}
+            <MapPixels length={100} />
           </AspectRatio>
         </Flex>
       </BackgroundImage>
