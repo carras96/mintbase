@@ -41,7 +41,7 @@ const BuyPlotsPreview = () => {
               textAlign: 'center'
             })}
           >
-            BUY plots for 0.63 ETH Earn 1000 $MBS
+            BUY plots for 0.63 ETH Earn 1000 $MSB
           </Text>
           <Text
             sx={(theme) => ({
@@ -50,7 +50,7 @@ const BuyPlotsPreview = () => {
               color: theme.colors.text[5]
             })}
           >
-            Earn 1000 $MBS
+            Earn 1000 $MSB
           </Text>
         </Flex>
       </Button>
@@ -58,11 +58,11 @@ const BuyPlotsPreview = () => {
       <Flex align='center' justify='center' direction='column' gap={rem(20)} w='100%'>
         <PlotItem lvl={0} arrVal={[93, 32]} ethVal={0.01} />
         {/* <Divider color='#4B4B4B' size={rem(1)} w='100%' /> */}
-        <PlotItem lvl={1} arrVal={[94, 32]} ethVal={0.01} />
-        <PlotItem lvl={2} arrVal={[95, 32]} ethVal={0.01} />
-        <PlotItem lvl={3} arrVal={[96, 32]} ethVal={0.01} />
-        <PlotItem lvl={4} arrVal={[97, 32]} ethVal={0.01} />
-        <PlotItem lvl={5} arrVal={[98, 32]} ethVal={0.01} />
+        <PlotItem lvl={1} arrVal={[94, 32]} ethVal={0.02} />
+        <PlotItem lvl={2} arrVal={[95, 32]} ethVal={0.04} />
+        <PlotItem lvl={3} arrVal={[96, 32]} ethVal={0.08} />
+        <PlotItem lvl={4} arrVal={[97, 32]} ethVal={0.16} />
+        <PlotItem lvl={5} arrVal={[98, 32]} ethVal={0.32} />
       </Flex>
 
       <Text

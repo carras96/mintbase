@@ -5,7 +5,12 @@ import { PlanetContext } from '~/components/contexts/PlanetContext'
 
 const MarketMaker = () => {
   const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
-
+  //open link
+  const openInNewTab = (url: string) => {
+    if (window) {
+      window?.open(url, '_blank')?.focus()
+    }
+  }
   return (
     <Flex
       align='center'
@@ -20,6 +25,10 @@ const MarketMaker = () => {
         gap={rem(isTablet ? 32 : 64)}
         direction='column'
         w={isTablet ? '100%' : '40%'}
+        onClick={() => openInNewTab('https://quantumfund.xyz/')}
+        sx={{
+          cursor: 'pointer'
+        }}
       >
         <Text
           sx={(theme) => ({

@@ -67,7 +67,7 @@ const PlotsDataBlock = () => {
         </Button>
         <Button variant={VARIANTS.SECONDARY} w={isMobile ? '100%' : isTablet ? '50%' : '30%'}>
           <Text fs={rem(20)} fw={700}>
-            Claimed 0.00 MBS
+            Claimed 0.00 MSB
           </Text>
         </Button>
         <Box

@@ -17,7 +17,8 @@ const routes = [
   },
   {
     path: '/buy-plots',
-    label: 'Buy Plots'
+    label: 'Buy Plots',
+    isDisabled: true
   },
   {
     path: '/marketplace',
@@ -26,11 +27,13 @@ const routes = [
   },
   {
     path: '/airdrop',
-    label: 'Airdrop'
+    label: 'Airdrop',
+    isDisabled: true
   },
   {
     path: '/wait-list',
-    label: 'Waitlist'
+    label: 'Waitlist',
+    isDisabled: true
   },
   {
     path: '/about-us',

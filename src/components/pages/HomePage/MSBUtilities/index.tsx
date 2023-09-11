@@ -7,7 +7,7 @@ import Paper from '../../../../assets/images/Paper.png'
 import BoxImg from '../../../../assets/images/Box.png'
 import { PlanetContext } from '~/components/contexts/PlanetContext'
 
-const MBSUtilities = () => {
+const MSBUtilities = () => {
   const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
   return (
     <Flex align='center' justify='center' w='100%' direction='column' gap={rem(isTablet ? 40 : 80)}>
@@ -18,7 +18,7 @@ const MBSUtilities = () => {
           textTransform: 'capitalize'
         })}
       >
-        $MBS Utilities
+        $MSB Utilities
       </Text>
 
       <Flex align='center' justify='space-between' direction={isTablet ? 'column' : 'row'}>
@@ -81,7 +81,7 @@ const MBSUtilities = () => {
 
               })}
             >
-              Making: $MBS holders could be given voting power or influence over certain decisions within the project.
+              Making: $MSB holders could be given voting power or influence over certain decisions within the project.
               This could include voting on platform upgrades, content curation, artwork selection, or other
               governance-related matters. The more tokens a holder possesses, the more weight their vote carries.
             </Text>
@@ -147,7 +147,7 @@ const MBSUtilities = () => {
                 textAlign: isTablet ? 'center' : 'left'
               })}
             >
-              $MBS holders might be able to stake their tokens in order to earn rewards, such as additional NFTs,
+              $MSB holders might be able to stake their tokens in order to earn rewards, such as additional NFTs,
               platform tokens, or other digital assets. Staking could provide benefits like enhanced access, increased
               voting power, or a share of transaction fees within the ecosystem.
             </Text>
@@ -186,8 +186,8 @@ const MBSUtilities = () => {
               textAlign: 'center'
             })}
           >
-            Every MBB will be redeemed to $MBS. the amount of $MBB will be totaled and divided equally by the percentage
-            of your MBB holdings. The more MBB you own, the more MBS you get.
+            Every MBB will be redeemed to $MSB. the amount of $MBB will be totaled and divided equally by the percentage
+            of your MBB holdings. The more MBB you own, the more MSB you get.
           </Text>
         </Flex>
         <Flex
@@ -210,7 +210,7 @@ const MBSUtilities = () => {
               textTransform: 'capitalize'
             })}
           >
-            How to get $MBS
+            How to get $MSB
           </Text>
           <Text
             sx={(theme) => ({
@@ -220,7 +220,7 @@ const MBSUtilities = () => {
               textAlign: 'center'
             })}
           >
-            In the Season 1 MBS airdrop, we have 133,000,000 $MBS airdrop to community.
+            Get 1000 MSB per plot purchased.
           </Text>
         </Flex>
       </Flex>
@@ -228,4 +228,4 @@ const MBSUtilities = () => {
   )
 }
 
-export default MBSUtilities
+export default MSBUtilities

@@ -27,7 +27,7 @@ const AirdropPage = () => {
         })}
         mb={rem(20)}
       >
-        In the Season 1 MBS airdrop, we have 133,000,000 $MBS airdrop to community
+        In the Season 1 MSB airdrop, we have 133,000,000 $MSB airdrop to community
       </Text>
       <Text
         sx={(theme) => ({
@@ -37,8 +37,8 @@ const AirdropPage = () => {
         })}
         mb={rem(40)}
       >
-        Every MBB will be redeemed to $MBS. the amount of $MBB will be totaled and divided equally by the percentage of
-        your MBB holdings. The more MBB you own, the more MBS you get.
+        Every MBB will be redeemed to $MSB. the amount of $MBB will be totaled and divided equally by the percentage of
+        your MBB holdings. The more MBB you own, the more MSB you get.
       </Text>
 
       <Flex align='flex-start' justify='center' gap={rem(24)} w='100%' direction={isTablet ? 'column' : 'row'}>

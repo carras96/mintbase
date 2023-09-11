@@ -128,7 +128,7 @@ const PlotPurchaseBlock = () => {
                 color: theme.colors.text[5]
               })}
             >
-              Earn 230 MBS
+              Earn 230 MSB
             </Text>
           </Flex>
         </Button>

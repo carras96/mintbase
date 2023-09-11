@@ -55,9 +55,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<HomePage />} />
-          <Route path='buy-plots' element={<BuyPlotsPage />} />
+          {/* <Route path='buy-plots' element={<BuyPlotsPage />} />
           <Route path='airdrop' element={<AirdropPage />} />
-          <Route path='wait-list' element={<WaitListPage />} />
+          <Route path='wait-list' element={<WaitListPage />} /> */}
           <Route path='about-us' element={<AboutUsPage />} />
 
           {/* Using path="*"" means "match anything", so this route

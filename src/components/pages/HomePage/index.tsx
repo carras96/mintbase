@@ -3,9 +3,9 @@ import React, { useContext } from 'react'
 import PreviewMapTabs from '../../commons/PreviewMapTabs'
 import BuyPlotsPreview from './BuyPlotsPreview'
 import ProfitChart from './ProfitChart'
-import MBSUtilities from './MBSUtilities'
 import MarketMaker from './MarketMaker'
 import { PlanetContext } from '~/components/contexts/PlanetContext'
+import MSBUtilities from './MSBUtilities'
 
 const HomePage = () => {
   const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
@@ -71,7 +71,7 @@ const HomePage = () => {
       </Flex>
 
       <Flex align='center' justify='center' w='100%' pb={rem(200)}>
-        <MBSUtilities />
+        <MSBUtilities />
       </Flex>
 
       <Flex align='center' justify='center' w='100%' mb={rem(100)} p={rem(40)}>

@@ -181,9 +181,11 @@ const Footer = () => {
           </Text>
 
           <Flex align='flex-start' justify='center' gap={rem(6)} direction='column' w='100%'>
-            <TextFooter>Twitter</TextFooter>
-            <TextFooter>Discord</TextFooter>
-            <TextFooter>Mirror</TextFooter>
+            <TextFooter onClick={() => openInNewTab('https://twitter.com/mintOnBase')}>Twitter</TextFooter>
+            <TextFooter onClick={() => openInNewTab('https://discord.com/invite/mintbase')}>Discord</TextFooter>
+            <TextFooter onClick={() => openInNewTab('https://mirror.xyz/0x2EdaC31D8364982443b0FB4E1fe1b2F216b60748')}>
+              Mirror
+            </TextFooter>
           </Flex>
         </Flex>
       </Flex>
