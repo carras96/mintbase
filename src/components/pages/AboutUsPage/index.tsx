@@ -9,7 +9,12 @@ import { PlanetContext } from '~/components/contexts/PlanetContext'
 
 const AboutUsPage = () => {
   const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
-
+  //open link
+  const openInNewTab = (url: string) => {
+    if (window) {
+      window?.open(url, '_blank')?.focus()
+    }
+  }
   return (
     <Box
       w='100%'
@@ -109,7 +114,10 @@ const AboutUsPage = () => {
           the ecosystem thrives.
         </Text>
 
-        <Button variant={VARIANTS.PRIMARY}>
+        <Button
+          variant={VARIANTS.PRIMARY}
+          onClick={() => openInNewTab('https://basemint.gitbook.io/mintbase-docs/the-mintbase-concept/about-mintbase')}
+        >
           <Flex align='center' justify='center' gap={rem(10)}>
             <BookIcon />
             <Text
