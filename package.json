@@ -23,15 +23,18 @@
     "echarts": "^5.4.3",
     "echarts-for-react": "^3.0.2",
     "localforage": "^1.10.0",
+    "lodash": "^4.17.21",
     "match-sorter": "^6.3.1",
     "react": "^18.2.0",
     "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.15.0",
     "sort-by": "^1.2.0",
-    "styled-components": "^6.0.7"
+    "styled-components": "^6.0.7",
+    "svg-pan-zoom-container": "^0.6.1"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.198",
     "@types/node": "^20.5.2",
     "@types/react": "^18.2.15",
     "@types/react-copy-to-clipboard": "^5.0.4",

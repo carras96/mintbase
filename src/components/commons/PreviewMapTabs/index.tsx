@@ -9,13 +9,13 @@ import { useDisclosure, useHover } from '@mantine/hooks'
 const PreviewMapTabs = () => {
   const { planet, setSelectedPlanet, isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } =
     useContext(PlanetContext)
-  const [opened, { close, open }] = useDisclosure(false)
+  // const [opened, { close, open }] = useDisclosure(false)
 
   return (
     <Flex align='center' justify='center' gap={rem(20)} direction='column'>
       <BackgroundImage src={planet.imagePlanet} w='100%' p={rem(60)}>
         <Flex align='center' justify='center' w='100%'>
-          <AspectRatio ratio={1} w='100%' onClick={open}>
+          <AspectRatio ratio={1} w='100%'>
             {/* <Image src={planet.image} alt='map' /> */}
             <MapPixels length={100} />
           </AspectRatio>
@@ -36,7 +36,7 @@ const PreviewMapTabs = () => {
           </Button>
         ))}
       </Flex>
-      {isTablet ? (
+      {/* {isTablet ? (
         <Modal
           opened={opened}
           onClose={close}
@@ -68,7 +68,7 @@ const PreviewMapTabs = () => {
             <MapPixels length={100} />
           </Box>
         </Modal>
-      )}
+      )} */}
     </Flex>
   )
 }
