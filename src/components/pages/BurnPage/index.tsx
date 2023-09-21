@@ -1,17 +1,18 @@
 import { Box, Flex, createStyles, rem, Text, Input, Image, Menu } from '@mantine/core'
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { ArrowDown, CircleArrowSwap } from '~/components/commons/Svg'
 import MSBIcon from '../../../assets/images/MSBIcon.png'
 import ETHIcon from '../../../assets/images/ETHIcon.png'
 import { VARIANTS } from '~/components/commons/Button/constants'
 import Button from '~/components/commons/Button'
+import { PlanetContext } from '~/components/contexts/PlanetContext'
 
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles((theme, { isMobile }: { isMobile: boolean }) => ({
   boxSwapItem: {
     padding: rem(20),
     borderRadius: rem(18),
     background: '#2B2B2B',
-    width: '60%',
+    width: isMobile ? '90%' : '60%',
     maxWidth: '600px'
   },
   boxTag: {
@@ -23,7 +24,9 @@ const useStyles = createStyles((theme) => ({
 }))
 
 const BurnPage = () => {
-  const { classes } = useStyles()
+  const { isMobile, isTablet, isSmallDesktop, isMediumDesktop, isDesktop } = useContext(PlanetContext)
+
+  const { classes } = useStyles({ isMobile })
   const [msbInputVal, setMsbInputVal] = useState<any>()
   const [otherTokenInputVal, setOtherTokenInputVal] = useState<any>()
 
@@ -150,7 +153,7 @@ const BurnPage = () => {
             disabled
             height={40}
             sx={{
-              width: '60%',
+              width: isMobile ? '90%' : '60%',
               maxWidth: '600px'
             }}
           >
@@ -170,7 +173,8 @@ const BurnPage = () => {
               textTransform: 'capitalize',
               color: '#E96A6A',
               lineHeight: rem(32),
-              fontSize: rem(16)
+              fontSize: rem(16),
+              textAlign: 'center'
             }}
           >
             You need to hold at least 1 Plots to ability to redeem your MSB to ETH
@@ -180,7 +184,8 @@ const BurnPage = () => {
               textTransform: 'capitalize',
               color: '#30FF45',
               lineHeight: rem(32),
-              fontSize: rem(16)
+              fontSize: rem(16),
+              textAlign: 'center'
             }}
           >
             You are eligible to redeem MSB to ETH
@@ -190,7 +195,7 @@ const BurnPage = () => {
             variant={VARIANTS.PRIMARY}
             height={40}
             sx={{
-              width: '60%',
+              width: isMobile ? '90%' : '60%',
               maxWidth: '600px'
             }}
           >
@@ -234,7 +239,8 @@ const BurnPage = () => {
               textTransform: 'capitalize',
               color: '#B5B5B5',
               lineHeight: rem(32),
-              fontSize: rem(16)
+              fontSize: rem(16),
+              textAlign: 'center'
             }}
           >
             Connect your wallet to determine whether you are eligible to redeem MSB to ETH
