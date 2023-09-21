@@ -153,6 +153,9 @@ const Button = ({ borderRadius, disabled, height, onClick, variant, isActive, ch
               backgroundColor: theme.colors.button[1],
 
               transform: `scale(1.05)`
+            },
+            '&:disabled': {
+              backgroundColor: '#424242'
             }
           },
           label: {
@@ -181,6 +184,9 @@ const Button = ({ borderRadius, disabled, height, onClick, variant, isActive, ch
             backgroundColor: theme.colors.button[1],
 
             transform: `scale(1.05)`
+          },
+          '&:disabled': {
+            backgroundColor: '#424242'
           }
         },
         label: {

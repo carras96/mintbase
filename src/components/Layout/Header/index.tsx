@@ -36,6 +36,10 @@ const routes = [
     isDisabled: true
   },
   {
+    path: '/burn',
+    label: 'Burn'
+  },
+  {
     path: '/about-us',
     label: 'About us'
   }

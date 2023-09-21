@@ -5,6 +5,7 @@ import BuyPlotsPage from './components/pages/BuyPlotsPage'
 import AirdropPage from './components/pages/AirdropPage'
 import WaitListPage from './components/pages/WaitListPage'
 import AboutUsPage from './components/pages/AboutUsPage'
+import BurnPage from './components/pages/BurnPage'
 
 // const router = createBrowserRouter(
 //   [
@@ -59,6 +60,7 @@ function App() {
           <Route path='airdrop' element={<AirdropPage />} />
           <Route path='wait-list' element={<WaitListPage />} /> */}
           <Route path='about-us' element={<AboutUsPage />} />
+          <Route path='burn' element={<BurnPage />} />
 
           {/* Using path="*"" means "match anything", so this route
           acts like a catch-all for URLs that we don't have explicit
